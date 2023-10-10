@@ -1,7 +1,8 @@
 # ToDoApi
 
 ```bash
-https://todoapi-42b6.onrender.com\api
+
+https://todoapi-42b6.onrender.com/api
 
 ```
 ## Sign UP
@@ -15,7 +16,7 @@ https://todoapi-42b6.onrender.com\api
 ```
 ## LogIn ( method = POST )
 ```
-\login
+/login
 
 {
   "username":"x",
@@ -24,7 +25,7 @@ https://todoapi-42b6.onrender.com\api
 ```
 ## Add Task ( method = POST )
 ```
-\add
+/add
 
 {
     "title":"my1",
@@ -34,7 +35,7 @@ https://todoapi-42b6.onrender.com\api
 ```
 ## Update Task ( method = PUT )
 ```
-\update
+/update
 
 {
       "task_id": 1,
@@ -47,7 +48,7 @@ https://todoapi-42b6.onrender.com\api
 
 ## Delete Task  (method = DELETE)
 ```
-\delete
+/delete
 
 {
     "task_id": 2
@@ -56,12 +57,12 @@ https://todoapi-42b6.onrender.com\api
 ```
 ## Log Out  ( method = POST )
 ```
-\logout
+/logout
 ```
 ## List All Tasks  ( method = GET )
 ```
 
-\list
+/list
 ```
 
 
