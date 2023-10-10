@@ -36,8 +36,7 @@ class LoginView(APIView):
         token=jwt.encode(payload, 'secret',algorithm='HS256')
 
         response=Response({
-            'message': 'logged in successfully',
-            'task_id': task_id
+            'message': 'logged in successfully'
         }
         )
         # response.set_cookie(key='jwt',value=token,httponly=True)
