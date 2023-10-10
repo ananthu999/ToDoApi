@@ -7,7 +7,7 @@ https://todoapi-42b6.onrender.com/api
 ```
 ## Sign UP
 ```
-\register
+/register
 
 {
   "username":"x",
