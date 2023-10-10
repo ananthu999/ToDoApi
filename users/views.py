@@ -35,14 +35,12 @@ class LoginView(APIView):
         }
         token=jwt.encode(payload, 'secret',algorithm='HS256')
 
-        response=Response({
-            'message': 'logged in successfully'
+        response=Response()
+        response.set_cookie(key='jwt',value=token,httponly=True)
+        response.data={
+            'jwt':token
+            'message':"Logged in  successfully"
         }
-        )
-        # response.set_cookie(key='jwt',value=token,httponly=True)
-        # response.data={
-        #     'jwt':token
-        # }
         # print(datetime.datetime.utcnow)
         return response
 
@@ -65,7 +63,7 @@ class LogoutView(APIView):
         response=Response()
         response.delete_cookie('jwt')
         response.data={
-            'message':'success'
+            'message':'loggedout successfully'
         }
         return response
 
