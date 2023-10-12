@@ -38,7 +38,7 @@ class LoginView(APIView):
         response=Response()
         response.set_cookie(key='jwt',value=token,httponly=True)
         response.data={
-            'jwt':token
+            'message': 'Logged in successfully'
         }
         # print(datetime.datetime.utcnow)
         return response
