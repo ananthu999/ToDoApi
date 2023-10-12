@@ -14,3 +14,11 @@ def get_current_time_formatted():
 # Usage example:
 # formatted_current_time = get_current_time_formatted()
 # print(formatted_current_time)
+
+def check_time_format(time):
+   
+    try:
+        datetime.strptime(time, "%Y-%m-%d %H:%M:%S")
+        return True
+    except ValueError:
+        return False
