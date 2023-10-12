@@ -175,7 +175,7 @@ class UpdateView(APIView):
         task_id=request.data.get('task_id')
         # Check if title and desc are provided
 
-         if not check_time_format(time):
+        if not check_time_format(time):
             return Response({'message': 'Time format is not correct.'}, status=400)
         if not title or not desc:
             return Response({'message': 'Title and description are required.'}, status=400)
