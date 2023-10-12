@@ -7,7 +7,7 @@ from rest_framework.exceptions import AuthenticationFailed
 # Create your views here.
 import jwt,datetime
 # from datetime import datetime  # Import datetime module
-from .dt import get_current_time_formatted
+from .dt import get_current_time_formatted,check_time_format
 
 
 
@@ -81,20 +81,22 @@ class AddView(APIView):
         serializer = UserSerializer(user)
         user_id = serializer.data['id']
         # ////////////////////////////////////////
-        # Extract task data from request
+        
         title = request.data.get('title')
         desc = request.data.get('desc')
         time=request.data.get('time')
 
-        # Check if title and desc are provided
+        
+        if not check_time_format(time):
+            return Response({'message': 'Time format is not correct.'}, status=400)
         if not title or not desc:
             return Response({'message': 'Title and description are required.'}, status=400)
 
-        # Assuming you have a Task model, create and save a task
+        
         task = ToDo(user=user, title=title, description=desc, time=time)
         task.save()
 
-        # Create a response indicating success
+        
         response = Response({
             'message': 'Task added successfully',
             'title': title,
